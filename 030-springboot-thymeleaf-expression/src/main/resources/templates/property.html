@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>常用属性</title>
+</head>
+<body>
+<form method="get" action="http://localhost:8080/test1">
+    用于编号：<input type="text" name="id"/><br/>
+    用户姓名：<input type="text" name="name"/><br/>
+    用户年龄：<input type="text" name="age"/><br/>
+    <input type="submit" value="submit"/>
+</form>
+
+<!--用到一些取值的时候，必须要用thymeleaf表达式
+    没有取值，用或者不用都是一样的
+
+-->
+<form th:method="post" th:action="@{/test1}">
+    用户编号：<input type="test" id="id" th:name="id"/><br/>
+    用户姓名：<input type="test" id="name" th:name="name"/><br/>
+    用户年龄：<input type="test" id="age" th:name="age"/><br/>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
